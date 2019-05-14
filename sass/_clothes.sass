@@ -1,0 +1,165 @@
+.clothes
+	display: flex
+	justify-content: space-between
+	margin-top: 40px
+	margin-bottom: 20px
+	img
+		user-select: none
+	&_left, &_right
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+	&_right
+	&_center
+		margin: 0 2%
+		a
+			@include btns()
+			width: 140px
+			margin-top: 60px
+		&_category
+			font-size: 13px
+			line-height: 36px
+			font-weight: 300
+			letter-spacing: 0.65px
+		&_new
+			position: absolute
+			background-color: #000
+			color: #fff
+			padding: 8px
+			right: 0px
+			top: 0px
+			z-index: 2
+			font-size: 12px
+			text-transform: uppercase
+			&::before
+				content: ''
+				border: 10px solid transparent
+				border-left: 10px solid #000
+				position: absolute
+				left: 0
+				bottom: -8px
+		&_text
+			font-size: 19px
+			line-height: 24px
+			font-weight: 800
+			letter-spacing: 1.4px
+			text-transform: uppercase
+		&_item
+			position: relative
+		&_info
+			position: absolute
+			top: 110px
+			left: 30px
+			p
+				margin: 10px 0
+	&_left
+		&_item
+			position: relative
+		&_info
+			position: absolute
+			left: 0
+			bottom: 20px
+			text-align: center
+			width: 100%
+			text-transform: uppercase
+			font-weight: 900
+			font-size: 22px
+			line-height: 25px
+			letter-spacing: 1px
+	&_right
+		&_item
+			&_top
+				.clothes_right_info
+					bottom: 20px
+					left: 15px
+					p
+						margin: 10px 0
+						&:nth-child(2)
+							text-transform: uppercase
+							width: 130px
+						&:nth-child(1)
+							font-size: 13px
+							font-weight: 300
+					a
+						@include btns()
+						width: 140px
+						margin-top: 30px
+
+		&_new
+			position: absolute
+			right: 0
+			top: 0
+			@extend .clothes_center_new
+		&_item
+			position: relative
+		&_info
+			position: absolute
+			bottom: 20px
+			left: 0
+			width: 100%
+		.clothes_right_item_glass_info
+			width: 100%
+			text-align: center
+		&_text
+			font-weight: 900
+			font-size: 22px
+			text-transform: uppercase
+
+@media (max-width: 991.98px)
+	.clothes
+		flex-wrap: wrap
+		justify-content: center
+		&_center
+			order: 1
+			margin: 0 20px
+			width: calc(377px + 271px + 40px)
+			img
+				width: calc(377px + 271px + 40px)
+				height: 550px
+		&_left, &_right
+			margin: 0 20px
+			margin-bottom: 50px
+
+@media (max-width: 767.98px)
+	.clothes
+		flex-direction: column
+		align-items: center
+		margin-top: 10px
+		&_center
+			width: 277px
+			margin: 0
+			order: -1
+			img
+				width: auto
+				height: auto
+			&_info
+				top: 50px
+		&_left, &_right
+			margin: 0
+			display: block
+		&_left
+			width: 277px
+		&_right
+			width: 277px
+			&_item
+				&_top
+					.clothes_right_info
+						left: 10px
+						top: 10px
+						a
+							width: 120px
+							font-size: 12px
+			&_info
+				bottom: 20px
+			.clothes_right_item_glass_info
+				.clothes_right_text
+					font-size: 14px
+
+
+
+
+
+
+
+
+

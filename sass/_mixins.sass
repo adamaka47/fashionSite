@@ -1,0 +1,23 @@
+@mixin min-max($min-width, $max-width, $padding)
+	min-width: $min-width
+	max-width: $max-width
+	padding: 0 $padding
+	box-sizing: border-box
+	margin: 0 auto
+
+@mixin btns($bg: #000, $fz: 14px, $ls: 0.6px, $br: 40px, $clr: #fff, $wd: 114px)
+	width: $wd
+	color: $clr
+	font-size: $fz
+	letter-spacing: $ls
+	background-color: $bg
+	border-radius: $br
+	padding: 17px 0
+	display: block
+	text-align: center
+	text-transform: uppercase
+	margin: 20px 0
+	@content
+	&:hover
+		background-color: lighten(#000, 10%)
+	

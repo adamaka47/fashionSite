@@ -1,0 +1,151 @@
+.slider
+	background: linear-gradient(90deg, #cdced2, #c5c6ca)
+	overflow-y: hidden
+	&_item
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: center
+		padding: 0 60px
+	&_img
+		flex-basis: 33%
+		margin-right: 100px
+		img
+			display: block
+			height: auto
+			transform: translateY(10px)
+	&_info
+		flex-basis: 50%
+	&_text
+		font-size: 14px
+		line-height: 1.8
+		color: $color
+		margin: 25px 0
+	&_title
+		font-weight: 600
+		font-size: 100px
+		line-height: 1
+		font-weight: 900
+		margin: 0
+		letter-spacing: 0px
+		text-transform: uppercase
+	&_small
+		font-size: 18px
+		margin-top: 20px
+		font-weight: 300
+		margin-bottom: 20px
+		span
+			font-weight: 900
+			margin-right: 30px
+			color: #000
+			letter-spacing: 1.2px
+	&_icons
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		margin-bottom: 20px
+		a
+			width: 37px
+			height: 37px
+			border-radius: 50%
+			display: block
+			border: 1px solid #000
+			margin-right: 20px
+			text-align: center
+			line-height: 35px
+			position: relative
+			transition: all 0.4s
+			&:hover
+				opacity: 0.4
+			&:last-child
+				margin-right: 0
+			&:first-child
+				background-color: #000
+			img
+				position: absolute
+				width: auto !important
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+	&_btn
+		@include btns()
+		width: 150px
+
+
+	.owl-carousel
+		max-width: 1920px
+		margin: 0 auto
+	.owl-carousel.owl-loaded
+		// display: flex !important
+	.owl-nav
+		button.owl-prev, button.owl-next
+			width: 49px
+			height: 49px
+			border: none
+			background: url('../img/arrows.png') 0 0 no-repeat
+			box-shadow: none
+			position: absolute
+			left: 15px
+			top: 50%
+			cursor: pointer
+			transform: translateY(-50%)
+			&:hover
+				background-position: 0 -50px
+		button.owl-next
+			background-position: -49px 0
+			left: auto
+			right: 15px
+			&:hover
+				background-position: -49px -50px
+
+	.owl-dots
+		text-align: center
+		padding: 0 0 15px 0
+
+		button.owl-dot
+			width: 10px
+			height: 10px
+			border-radius: 10px
+			background-color: #fff
+			border: none
+			box-shadow: none
+			padding: 0
+			margin: 0 5px
+			margin-top: 20px
+			cursor: pointer
+		button.owl-dot.active
+			background-color: #111
+
+	
+
+@media (max-width: 1296px)
+	.slider
+		&_img
+			flex-basis: 35%
+			margin-right: 50px
+		&_info
+			flex-basis: 50%
+		&_title
+			font-size: 70px
+			margin: 50px 0
+
+@media (max-width: 991.98px)
+	.slider
+		padding-bottom: 40px
+		&_img
+			display: none
+		&_item
+			padding: 0
+		&_info
+			flex-basis: 100%
+			padding: 0 20px
+
+@media (max-width: 767.98px)
+	.slider
+		&_title
+			font-size: 40px
+			margin-bottom: 20px
+
+
+
+

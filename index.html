@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<meta name="keywords" content="Fashion Shop">
+	<meta name="description" content="We are the most popular company of over the world">
+	<meta name="author" content="Adam">
+	<meta property="og:image" content="img/banner_bg.jpg">
+	<link rel="icon" href="img/faviconka.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="img/faviconka.png" type="image/x-icon" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<title>Fashion Teacher</title>
+	
+	<style>
+		.preloader_wrapper {
+		  height: 100vh;
+		  width: 100vw;
+		  background-color: #222;
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  z-index: 20;
+		}
+
+		.banter-loader {
+		  position: absolute;
+		  left: 50%;
+		  top: 50%;
+		  width: 72px;
+		  height: 72px;
+		  margin-left: -36px;
+		  margin-top: -36px;
+		}
+		.banter-loader__box {
+		  float: left;
+		  position: relative;
+		  width: 20px;
+		  height: 20px;
+		  margin-right: 6px;
+		}
+		.banter-loader__box:before {
+		  content: "";
+		  position: absolute;
+		  left: 0;
+		  top: 0;
+		  width: 100%;
+		  height: 100%;
+		  background: #fff;
+		}
+		.banter-loader__box:nth-child(3n) {
+		  margin-right: 0;
+		  margin-bottom: 6px;
+		}
+		.banter-loader__box:nth-child(1):before, .banter-loader__box:nth-child(4):before {
+		  margin-left: 26px;
+		}
+		.banter-loader__box:nth-child(3):before {
+		  margin-top: 52px;
+		}
+		.banter-loader__box:last-child {
+		  margin-bottom: 0;
+		}
+
+		@keyframes moveBox-1 {
+		  9.0909090909% {
+		    transform: translate(-26px, 0);
+		  }
+		  18.1818181818% {
+		    transform: translate(0px, 0);
+		  }
+		  27.2727272727% {
+		    transform: translate(0px, 0);
+		  }
+		  36.3636363636% {
+		    transform: translate(26px, 0);
+		  }
+		  45.4545454545% {
+		    transform: translate(26px, 26px);
+		  }
+		  54.5454545455% {
+		    transform: translate(26px, 26px);
+		  }
+		  63.6363636364% {
+		    transform: translate(26px, 26px);
+		  }
+		  72.7272727273% {
+		    transform: translate(26px, 0px);
+		  }
+		  81.8181818182% {
+		    transform: translate(0px, 0px);
+		  }
+		  90.9090909091% {
+		    transform: translate(-26px, 0px);
+		  }
+		  100% {
+		    transform: translate(0px, 0px);
+		  }
+		}
+		.banter-loader__box:nth-child(1) {
+		  animation: moveBox-1 4s infinite;
+		}
+
+		@keyframes moveBox-2 {
+		  9.0909090909% {
+		    transform: translate(0, 0);
+		  }
+		  18.1818181818% {
+		    transform: translate(26px, 0);
+		  }
+		  27.2727272727% {
+		    transform: translate(0px, 0);
+		  }
+		  36.3636363636% {
+		    transform: translate(26px, 0);
+		  }
+		  45.4545454545% {
+		    transform: translate(26px, 26px);
+		  }
+		  54.5454545455% {
+		    transform: translate(26px, 26px);
+		  }
+		  63.6363636364% {
+		    transform: translate(26px, 26px);
+		  }
+		  72.7272727273% {
+		    transform: translate(26px, 26px);
+		  }
+		  81.8181818182% {
+		    transform: translate(0px, 26px);
+		  }
+		  90.9090909091% {
+		    transform: translate(0px, 26px);
+		  }
+		  100% {
+		    transform: translate(0px, 0px);
+		  }
+		}
+		.banter-loader__box:nth-child(2) {
+		  animation: moveBox-2 4s infinite;
+		}
+
+		@keyframes moveBox-3 {
+		  9.0909090909% {
+		    transform: translate(-26px, 0);
+		  }
+		  18.1818181818% {
+		    transform: translate(-26px, 0);
+		  }
+		  27.2727272727% {
+		    transform: translate(0px, 0);
+		  }
+		  36.3636363636% {
+		    transform: translate(-26px, 0);
+		  }
+		  45.4545454545% {
+		    transform: translate(-26px, 0);
+		  }
+		  54.5454545455% {
+		    transform: translate(-26px, 0);
+		  }
+		  63.6363636364% {
+		    transform: translate(-26px, 0);
+		  }
+		  72.7272727273% {
+		    transform: translate(-26px, 0);
+		  }
+		  81.8181818182% {
+		    transform: translate(-26px, -26px);
+		  }
+		  90.9090909091% {
+		    transform: translate(0px, -26px);
+		  }
+		  100% {
+		    transform: translate(0px, 0px);
+		  }
+		}
+		.banter-loader__box:nth-child(3) {
+		  animation: moveBox-3 4s infinite;
+		}
+
+		@keyframes moveBox-4 {
+		  9.0909090909% {
+		    transform: translate(-26px, 0);
+		  }
+		  18.1818181818% {
+		    transform: translate(-26px, 0);
+		  }
+		  27.2727272727% {
+		    transform: translate(-26px, -26px);
+		  }
+		  36.3636363636% {
+		    transform: translate(0px, -26px);
+		  }
+		  45.4545454545% {
+		    transform: translate(0px, 0px);
+		  }
+		  54.5454545455% {
+		    transform: translate(0px, -26px);
+		  }
+		  63.6363636364% {
+		    transform: translate(0px, -26px);
+		  }
+		  72.7272727273% {
+		    transform: translate(0px, -26px);
+		  }
+		  81.8181818182% {
+		    transform: translate(-26px, -26px);
+		  }
+		  90.9090909091% {
+		    transform: translate(-26px, 0px);
+		  }
+		  100% {
+		    transform: translate(0px, 0px);
+		  }
+		}
+		.banter-loader__box:nth-child(4) {
+		  animation: moveBox-4 4s infinite;
+		}
+
+		@keyframes moveBox-5 {
+		  9.0909090909% {
+		    transform: translate(0, 0);
+		  }
+		  18.1818181818% {
+		    transform: translate(0, 0);
+		  }
+		  27.2727272727% {
+		    transform: translate(0, 0);
+		  }
+		  36.3636363636% {
+		    transform: translate(26px, 0);
+		  }
+		  45.4545454545% {
+		    transform: translate(26px, 0);
+		  }
+		  54.5454545455% {
+		    transform: translate(26px, 0);
+		  }
+		  63.6363636364% {
+		    transform: translate(26px, 0);
+		  }
+		  72.7272727273% {
+		    transform: translate(26px, 0);
+		  }
+		  81.8181818182% {
+		    transform: translate(26px, -26px);
+		  }
+		  90.9090909091% {
+		    transform: translate(0px, -26px);
+		  }
+		  100% {
+		    transform: translate(0px, 0px);
+		  }
+		}
+		.banter-loader__box:nth-child(5) {
+		  animation: moveBox-5 4s infinite;
+		}
+
+		@keyframes moveBox-6 {
+		  9.0909090909% {
+		    transform: translate(0, 0);
+		  }
+		  18.1818181818% {
+		    transform: translate(-26px, 0);
+		  }
+		  27.2727272727% {
+		    transform: translate(-26px, 0);
+		  }
+		  36.3636363636% {
+		    transform: translate(0px, 0);
+		  }
+		  45.4545454545% {
+		    transform: translate(0px, 0);
+		  }
+		  54.5454545455% {
+		    transform: translate(0px, 0);
+		  }
+		  63.6363636364% {
+		    transform: translate(0px, 0);
+		  }
+		  72.7272727273% {
+		    transform: translate(0px, 26px);
+		  }
+		  81.8181818182% {
+		    transform: translate(-26px, 26px);
+		  }
+		  90.9090909091% {
+		    transform: translate(-26px, 0px);
+		  }
+		  100% {
+		    transform: translate(0px, 0px);
+		  }
+		}
+		.banter-loader__box:nth-child(6) {
+		  animation: moveBox-6 4s infinite;
+		}
+
+		@keyframes moveBox-7 {
+		  9.0909090909% {
+		    transform: translate(26px, 0);
+		  }
+		  18.1818181818% {
+		    transform: translate(26px, 0);
+		  }
+		  27.2727272727% {
+		    transform: translate(26px, 0);
+		  }
+		  36.3636363636% {
+		    transform: translate(0px, 0);
+		  }
+		  45.4545454545% {
+		    transform: translate(0px, -26px);
+		  }
+		  54.5454545455% {
+		    transform: translate(26px, -26px);
+		  }
+		  63.6363636364% {
+		    transform: translate(0px, -26px);
+		  }
+		  72.7272727273% {
+		    transform: translate(0px, -26px);
+		  }
+		  81.8181818182% {
+		    transform: translate(0px, 0px);
+		  }
+		  90.9090909091% {
+		    transform: translate(26px, 0px);
+		  }
+		  100% {
+		    transform: translate(0px, 0px);
+		  }
+		}
+		.banter-loader__box:nth-child(7) {
+		  animation: moveBox-7 4s infinite;
+		}
+
+		@keyframes moveBox-8 {
+		  9.0909090909% {
+		    transform: translate(0, 0);
+		  }
+		  18.1818181818% {
+		    transform: translate(-26px, 0);
+		  }
+		  27.2727272727% {
+		    transform: translate(-26px, -26px);
+		  }
+		  36.3636363636% {
+		    transform: translate(0px, -26px);
+		  }
+		  45.4545454545% {
+		    transform: translate(0px, -26px);
+		  }
+		  54.5454545455% {
+		    transform: translate(0px, -26px);
+		  }
+		  63.6363636364% {
+		    transform: translate(0px, -26px);
+		  }
+		  72.7272727273% {
+		    transform: translate(0px, -26px);
+		  }
+		  81.8181818182% {
+		    transform: translate(26px, -26px);
+		  }
+		  90.9090909091% {
+		    transform: translate(26px, 0px);
+		  }
+		  100% {
+		    transform: translate(0px, 0px);
+		  }
+		}
+		.banter-loader__box:nth-child(8) {
+		  animation: moveBox-8 4s infinite;
+		}
+
+		@keyframes moveBox-9 {
+		  9.0909090909% {
+		    transform: translate(-26px, 0);
+		  }
+		  18.1818181818% {
+		    transform: translate(-26px, 0);
+		  }
+		  27.2727272727% {
+		    transform: translate(0px, 0);
+		  }
+		  36.3636363636% {
+		    transform: translate(-26px, 0);
+		  }
+		  45.4545454545% {
+		    transform: translate(0px, 0);
+		  }
+		  54.5454545455% {
+		    transform: translate(0px, 0);
+		  }
+		  63.6363636364% {
+		    transform: translate(-26px, 0);
+		  }
+		  72.7272727273% {
+		    transform: translate(-26px, 0);
+		  }
+		  81.8181818182% {
+		    transform: translate(-52px, 0);
+		  }
+		  90.9090909091% {
+		    transform: translate(-26px, 0);
+		  }
+		  100% {
+		    transform: translate(0px, 0);
+		  }
+		}
+		.banter-loader__box:nth-child(9) {
+		  animation: moveBox-9 4s infinite;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="preloader_wrapper">
+	  <div class="banter-loader">
+	    <div class="banter-loader__box"></div>
+	    <div class="banter-loader__box"></div>
+	    <div class="banter-loader__box"></div>
+	    <div class="banter-loader__box"></div>
+	    <div class="banter-loader__box"></div>
+	    <div class="banter-loader__box"></div>
+	    <div class="banter-loader__box"></div>
+	    <div class="banter-loader__box"></div>
+	    <div class="banter-loader__box"></div>
+	  </div>
+	</div>
+
+	<div class="container">
+		<header class="header" id="header">
+			<div class="header_top">
+				<div class="wrap header_wrap">
+					<div class="logo header_logo">
+						<a href="#"><img src="img/logo.png" alt="Logo"></a>
+					</div>
+					<nav class="menu header_menu">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="#clothes">Shop</a></li>
+							<li><a href="#products">Women</a></li>
+							<li><a href="#products">Men</a></li>
+							<li><a href="#feature">Story</a></li>
+						</ul>
+					</nav>
+					<div class="icons header_icons">
+						<div class="header_icons_cart">
+							<a href="#"><img src="img/cart.png" alt="Cart"></a>
+						</div>
+						<div class="header_icons_search">
+							<img src="img/search.png" alt="Seacrh" class="header_icons_search_img">
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<section class="slider" id="slider">
+			<div class="owl-carousel owl-theme">
+				<div class="slider_item">
+					<div class="slider_img">
+						<img src="img/slide.png" alt="Slide">
+					</div>
+					<div class="slider_info">
+						<h1 class="slider_title">
+							Summer Collection
+						</h1>
+						<p class="slider_small"><span>01</span>Men's Collection</p>
+						<div class="slider_icons">
+							<a href="#">
+								<img src="img/slider_ic3.png" alt="Icon">
+							</a>
+							<a href="#">
+								<img src="img/slider_ic2.png" alt="Icon">
+							</a>
+							<a href="#">
+								<img src="img/slider_ic1.png" alt="Icon">
+							</a>
+						</div>
+						<p class="slider_text">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam officiis deserunt ipsam reprehenderit blanditiis, repellendus cupiditate consequatur. Minima in, vero eligendi, explicabo suscipit ut, tenetur velit expedita aperiam quod non doloribus blanditiis optio nemo! Ea obcaecati veritatis quisquam dicta tempora quasi earum et non, quod, quidem reiciendis delectus illum odit!
+						</p>
+						<a href="#" class="btn slider_btn">Shop Now</a>
+					</div>
+				</div>
+				<div class="slider_item">
+					<div class="slider_img">
+						<img src="img/slide.png" alt="Slide">
+					</div>
+					<div class="slider_info">
+						<h1 class="slider_title">
+							Summer Collection
+						</h1>
+						<p class="slider_small"><span>01</span>Men's Collection</p>
+						<div class="slider_icons">
+							<a href="#">
+								<img src="img/slider_ic3.png" alt="Icon">
+							</a>
+							<a href="#">
+								<img src="img/slider_ic2.png" alt="Icon">
+							</a>
+							<a href="#">
+								<img src="img/slider_ic1.png" alt="Icon">
+							</a>
+						</div>
+						<p class="slider_text">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam officiis deserunt ipsam reprehenderit blanditiis, repellendus cupiditate consequatur. Minima in, vero eligendi, explicabo suscipit ut, tenetur velit expedita aperiam quod non doloribus blanditiis optio nemo! Ea obcaecati veritatis quisquam dicta tempora quasi earum et non, quod, quidem reiciendis delectus illum odit!
+						</p>
+						<a href="#" class="btn slider_btn">Shop Now</a>
+					</div>
+				</div>
+				<div class="slider_item">
+					<div class="slider_img">
+						<img src="img/slide.png" alt="Slide">
+					</div>
+					<div class="slider_info">
+						<h1 class="slider_title">
+							Summer Collection
+						</h1>
+						<p class="slider_small"><span>01</span>Men's Collection</p>
+						<div class="slider_icons">
+							<a href="#">
+								<img src="img/slider_ic3.png" alt="Icon">
+							</a>
+							<a href="#">
+								<img src="img/slider_ic2.png" alt="Icon">
+							</a>
+							<a href="#">
+								<img src="img/slider_ic1.png" alt="Icon">
+							</a>
+						</div>
+						<p class="slider_text">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam officiis deserunt ipsam reprehenderit blanditiis, repellendus cupiditate consequatur. Minima in, vero eligendi, explicabo suscipit ut, tenetur velit expedita aperiam quod non doloribus blanditiis optio nemo! Ea obcaecati veritatis quisquam dicta tempora quasi earum et non, quod, quidem reiciendis delectus illum odit!
+						</p>
+						<a href="#" class="btn slider_btn">Shop Now</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="wrap">
+			<div class="content">
+				<section class="category" id="category">
+					<ul>
+						<li><a href="#">All</a></li>
+						<li><a href="#">spring-summer</a></li>
+						<li><a href="#">sweatshirt</a></li>
+						<li><a href="#">sneakers</a></li>
+						<li><a href="#">gadgets</a></li>
+						<li><a href="#">outdoor</a></li>
+					</ul>
+				</section>
+
+				<section class="clothes" id="clothes">
+					<div class="clothes_left">
+						<div class="clothes_left_item">
+							<img src="img/c1.jpg" alt="Clothes">
+							<div class="clothes_left_info">
+								<p class="clothes_left_text">Buy 2 get<br>50% off</p>
+							</div>
+						</div>
+						<div class="clothes_left_item">
+							<img src="img/c2.jpg" alt="Clothes">
+						</div>
+					</div>
+					<div class="clothes_center">
+						<div class="clothes_center_item">
+							<img src="img/c3.jpg" alt="Clothes">
+							<div class="clothes_center_info">
+								<p class="clothes_center_category">Winter Jacket</p>
+								<p class="clothes_center_text">Vintage look<br>For a woman</p>
+								<a href="#">Shop Now</a>
+							</div>
+							<span class="clothes_center_new">New</span>
+						</div>
+					</div>
+					<div class="clothes_right">
+						<div class="clothes_right_item clothes_right_item_top">
+							<img src="img/c4.jpg" alt="Clothes">
+							<div class="clothes_right_info">
+								<p class="clothes_right_category">Winter Jacket</p>
+								<p class="clothes_right_text">Fashion for man</p>
+								<a href="#">Shop Now</a>
+							</div>
+						</div>
+						<div class="clothes_right_item clothes_right_item_bot">
+							<img src="img/c5.jpg" alt="Clothes">
+							<div class="clothes_right_info clothes_right_item_glass_info">
+								<p class="clothes_right_text">40% off on sunglass</p>
+							</div>
+							<span class="clothes_right_new">New</span>
+						</div>
+					</div>
+				</section>
+
+				<div class="banner" id="banner">
+					<div class="banner_info">
+						<h2 class="banner_title">
+							We offer brand new styles
+						</h2>
+						<p class="banner_text">
+							sign up now and get 50% off
+						</p>
+						<a href="#">See Full Collection</a>
+					</div>
+				</div>
+
+				<section class="products" id="products">
+					<h2 class="products_title">Product Types</h2>
+					<p class="products_text">up to 30% discount</p>
+					<div class="products_items">
+						<div class="products_item"><img src="img/prod1.jpg" alt="Type"><a href="#">Shop Men</a></div>
+						<div class="products_item"><img src="img/prod2.jpg" alt="Type"><a href="#">Shop Women</a></div>
+						<div class="products_item"><img src="img/prod3.jpg" alt="Type"><a href="#">Shop Kids</a></div>
+					</div>
+				</section>
+
+				<section class="feature" id="feature">
+					<h2 class="feature_title">
+						Featured Products
+					</h2>
+					<div class="category">
+						<ul>
+							<li><a href="#">All</a></li>
+							<li><a href="#">spring-summer</a></li>
+							<li><a href="#">sweatshirt</a></li>
+							<li><a href="#">sneakers</a></li>
+							<li><a href="#">gadgets</a></li>
+							<li><a href="#">outdoor</a></li>
+						</ul>
+					</div>
+
+					<div class="feature_items owl-carousel owl-theme">
+						<div class="feature_item">
+							<img src="img/feat1.jpg" alt="Feature">
+							<a href="#" class="feature_name">Ted Baker Womens Light</a>
+							<p class="feature_brand">Gucci</p>
+							<p class="feature_price"><span>70.00 $</span> $120.00</p>
+						</div>
+						<div class="feature_item">
+								<img src="img/feat2.jpg" alt="Feature">
+								<a href="#" class="feature_name">Ted Baker Womens Light</a>
+								<p class="feature_brand">Gucci</p>
+								<p class="feature_price"><span>70.00 $</span> $120.00</p>
+						</div>
+						<div class="feature_item">
+								<img src="img/feat3.jpg" alt="Feature">
+								<a href="#" class="feature_name">Ted Baker Womens Light</a>
+								<p class="feature_brand">Gucci</p>
+								<p class="feature_price"><span>70.00 $</span> $120.00</p>
+						</div>
+						<div class="feature_item">
+								<img src="img/fea4.jpg" alt="Feature">
+								<a href="#" class="feature_name">Ted Baker Womens Light</a>
+								<p class="feature_brand">Gucci</p>
+								<p class="feature_price"><span>70.00 $</span> $120.00</p>
+						</div>
+						<div class="feature_item">
+								<img src="img/feat1.jpg" alt="Feature">
+								<a href="#" class="feature_name">Ted Baker Womens Light</a>
+								<p class="feature_brand">Gucci</p>
+								<p class="feature_price"><span>70.00 $</span> $120.00</p>
+						</div>
+					</div>
+					<a href="#" class="feature_btn">Show More</a>
+				</section>
+
+				<div class="banner banner_two" id="banner">
+					<div class="banner_info">
+						<h2 class="banner_title">
+							Subscribe to our newsletter
+						</h2>
+						<p class="banner_text">
+							sign up now and get 80% off
+						</p>
+						<a href="#">Sign up now</a>
+					</div>
+				</div>
+
+				<section class="blog" id="blog">
+					<h2 class="blog_title">
+						Our Blog & News
+					</h2>
+					<div class="blog_items">
+						<div class="blog_item">
+							<img src="img/blog1.jpg" alt="Blog">
+							<div class="blog_info">
+								<h4><a href="#">The 15 secrets about fashion people</a></h4>
+								<p class="blog_date">June 21, 2027 by admin</p>
+							</div>
+						</div>
+						<div class="blog_item">
+							<img src="img/blog2.jpg" alt="Blog">
+							<div class="blog_info">
+								<h4><a href="#">The 15 secrets about fashion people</a></h4>
+								<p class="blog_date">March 17, 2028 by admin</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			</div>
+		</div>
+
+		<section class="link" id="link">
+			<div class="wrap link_wrap">
+				<div class="link_item">
+					<h5 class="link_title">Information</h5>
+					<ul>
+						<li><a href="#">The brand</a></li>
+						<li><a href="#">Local stores</a></li>
+						<li><a href="#">Customer Service</a></li>
+						<li><a href="#">Privacy & cookies</a></li>
+						<li><a href="#">Site map</a></li>
+					</ul>
+				</div>
+				<div class="link_item">
+					<h5 class="link_title">My profile</h5>
+					<ul>
+						<li><a href="#">The brand</a></li>
+						<li><a href="#">Local stores</a></li>
+						<li><a href="#">Customer Service</a></li>
+						<li><a href="#">Privacy & cookies</a></li>
+						<li><a href="#">Site map</a></li>
+					</ul>
+				</div>
+				<div class="link_item">
+					<h5 class="link_title">Your Account</h5>
+					<ul>
+						<li><a href="#">The brand</a></li>
+						<li><a href="#">Local stores</a></li>
+						<li><a href="#">Customer Service</a></li>
+						<li><a href="#">Privacy & cookies</a></li>
+						<li><a href="#">Site map</a></li>
+					</ul>
+				</div>
+				<div class="link_item">
+					<h5 class="link_title">LookBook</h5>
+					<ul>
+						<li><a href="#">The brand</a></li>
+						<li><a href="#">Local stores</a></li>
+						<li><a href="#">Customer Service</a></li>
+						<li><a href="#">Privacy & cookies</a></li>
+						<li><a href="#">Site map</a></li>
+					</ul>
+				</div>
+				<div class="link_item link_item_contact">
+					<h5 class="link_title">Contact Details</h5>
+					<p><span>Telephone:</span> 0123-456-789</p>
+					<p><span>Email:</span> lol117@google.com</p>
+					<p class="link_item_last"><span>Head Office:</span> 117 Blue Town, Falcon Street, Moscow. 317588</p>
+				</div>
+			</div>
+		</section>
+
+		<footer class="footer" id="footer">
+			<div class="wrap">
+				<p>© Copyright by Adam's 3.0. 2019 Designed by Dasten</p>
+				<a href="#"><img src="img/logo.png" alt="Logo"></a>
+			</div>
+		</footer>
+
+	</div>
+
+	<script
+	  src="https://code.jquery.com/jquery-3.4.1.min.js"
+	  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	  crossorigin="anonymous"></script>
+	  <script src="js/SmoothScroll.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script>
+		$(window).on('load', function() {
+			$('.preloader_wrapper').delay(2000).fadeOut('slow');
+		});
+		$(document).ready(function() {
+			$('.owl-carousel:eq(0)').owlCarousel({
+			    loop:true,
+			    margin:0,
+			    nav:true,
+			    navText: [],
+			    dots: false,
+			    responsive:{
+			        0:{
+			            items:1,
+			            dots:true,
+			            nav:false
+			        },
+			        993:{
+			            items:1,
+			            loop:true,
+			            margin:0,
+			            nav:true,
+			            navText: [],
+			            dots: false,
+			        }
+			    }
+			});
+
+			$('.owl-carousel:eq(1)').owlCarousel({
+			    loop:true,
+			    margin:30,
+			    nav:true,
+			    navText: [],
+			    dots: false,
+			    responsive:{
+			        0:{
+			            items:1,
+			            dots:true,
+			            nav:false,
+			            margin:0
+			        },
+			        380:{
+			            items:2,
+			            loop:true,
+			            nav:true,
+			            navText: [],
+			            dots: false,
+			        },
+			        576:{
+			        	items:3
+			        },
+			        768:{
+			        	items:3,
+			        },
+			        993:{
+			        	items:4
+			        }
+			    }
+			});
+			$('.header_menu ul li a').on('click', function(event) {
+				event.preventDefault();
+				var offsets = $(this).attr('href');
+				var top = $(offsets).offset().top;
+				$('html, body').animate({scrollTop: top}, 1000)
+			});
+		});
+	</script>
+</body>
+</html>

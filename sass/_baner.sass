@@ -1,0 +1,77 @@
+.banner
+	background: #00b7d9 url('../img/banner_bg.jpg') left center no-repeat
+	background-size: cover
+	margin: 25px 0
+	padding: 40px 0
+	display: flex
+	justify-content: flex-end
+	text-align: center
+	flex-wrap: wrap
+	&_info
+		flex-basis: 600px
+		margin-right: 20px
+	&_title
+		text-transform: uppercase
+		font-weight: 890
+		font-size: 24px
+		line-height: 30px
+		letter-spacing: 2.5px
+		color: #2d2b27
+		margin-bottom: 25px
+	&_text
+		font-size: 16px
+		line-height: 20px
+		letter-spacing: 4px
+		text-transform: uppercase
+		margin-bottom: 25px
+	a
+		@include btns()
+		width: 250px
+		background-color: #fff
+		color: #000
+		padding: 20px 0
+		margin: auto
+		&:hover
+			background-color: darken(#fff, 10%)
+
+.banner_two
+	background: #d7dbd5 url('../img/banner2_bg.jpg') left center no-repeat
+	background-size: cover
+	margin: 25px 0
+	padding: 40px 0
+	display: flex
+	justify-content: flex-start
+	text-align: center
+	flex-wrap: wrap
+	a
+		@include btns()
+		background-color: #000
+		color: #fff
+		width: 250px
+		padding: 20px 0
+		margin: auto
+
+@media (max-width: 991.98px)
+	.banner
+		background-position: -200px 0
+		&_info
+			margin-right: 0
+@media (max-width: 767.98px)
+	.banner
+		background: #00b7d9
+		&_info
+			flex-basis: 100%
+			padding: 0 20px
+	.banner
+		background-color: #d7dbd5
+
+@media (max-width: 575.98px)
+	.banner
+		&_title
+			font-size: 16px
+		&_text
+			font-size: 12px
+			letter-spacing: 1px
+		a
+			width: 180px
+			font-size: 12px

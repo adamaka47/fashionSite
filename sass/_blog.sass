@@ -1,0 +1,49 @@
+.blog
+	padding: 45px 0
+	margin-bottom: -280px
+	&_title
+		@extend .products_title
+	&_items
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+		margin-bottom: 15px
+	&_item
+		flex-basis: 48%
+		margin: 20px 0
+		img
+			width: 100%
+			display: block
+			margin: auto
+	&_info
+		background-color: #fff
+		padding: 15px 0px
+		width: calc(100% - 70px)
+		margin: 0 auto
+		text-align: center
+		transform: translateY(-50%)
+		h4
+			margin: 15px auto
+			a
+				text-transform: uppercase
+				font-weight: 600
+				font-size: 18px
+				letter-spacing: 1px
+				&:hover
+					text-decoration: underline
+	&_date
+		font-style: italic
+		color: #999
+		font-size: 14px
+		line-height: 20px
+
+
+@media (max-width: 767.98px)
+	.blog
+		padding: 40px 0
+		&_info
+			width: calc(100% - 30px)
+		&_item
+			flex-basis: 100%
+		&_items
+			justify-content: center
